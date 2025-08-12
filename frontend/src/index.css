@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom global styles */
+:root {
+  --bg-gradient: linear-gradient(180deg, #0f172a 0%, #111827 50%, #070617 100%);
+}
+html,body,#root { height:100%; }
+body {
+  background: var(--bg-gradient);
+  color: #e6eef8;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* small helpers */
+
+  .card {
+  @apply bg-white/10 backdrop-blur-md rounded-2xl p-4 shadow-lg;
+
+
+}
+.btn {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold bg-primary text-black;
+}
+.badge {
+  @apply inline-block px-3 py-1 rounded-md bg-gold text-black text-sm font-medium;
+}
