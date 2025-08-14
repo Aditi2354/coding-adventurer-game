@@ -2,7 +2,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || ""
+  baseURL: "http://localhost:5000",   // 👈 ONLY plain string
+  withCredentials: true,
 });
 
 api.interceptors.request.use(cfg => {
@@ -11,7 +12,6 @@ api.interceptors.request.use(cfg => {
   return cfg;
 });
 
-// Reject HTML fallbacks (e.g., serve -s dist returning index.html)
 api.interceptors.response.use(
   (resp) => {
     const ct = resp.headers?.["content-type"] || "";
@@ -22,6 +22,5 @@ api.interceptors.response.use(
   },
   (err) => Promise.reject(err)
 );
-console.log("API:", import.meta.env.VITE_API_URL); // should print http://localhost:5000
 
 export default api;

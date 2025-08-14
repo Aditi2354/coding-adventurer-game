@@ -28,7 +28,9 @@ export default function EditorRunner({challenge, onResult}) {
     // try backend first; fallback to mock
     setLoading(true);
     try {
-      const resp = await api.post("/submit", { studentId: user.id, challengeId: challenge._id, source: code, languageId: 63 });
+      const resp = await api.post("/submit", { 
+        studentId:   user._id,   challengeId: challenge._id, source: code, languageId: 63 
+      });
       setLoading(false);
       if(onResult) onResult(resp.data);
     } catch(e) {

@@ -14,8 +14,12 @@ import { requireAuth } from "./middleware/auth.js";
 const app = express();
 
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || "*"
+  origin: process.env.CORS_ORIGIN || "http://localhost:5173", // NOT "*"
+  credentials: true,
+  methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
 }));
+
 app.use(express.json());
 
 // Health

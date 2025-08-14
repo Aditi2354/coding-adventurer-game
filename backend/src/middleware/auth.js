@@ -1,4 +1,5 @@
 // backend/src/middleware/auth.js
+// backend/src/middleware/auth.js
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
@@ -9,7 +10,9 @@ export async function requireAuth(req, res, next) {
     if (!token) return res.status(401).json({ error: "No token" });
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    const user = await User.findById(decoded.id).select("-password");
+
+    // ✅ EXPECT _id ALWAYS
+    const user = await User.findById(decoded._id).select("-password");
     if (!user) return res.status(401).json({ error: "Invalid user" });
 
     req.user = user;
