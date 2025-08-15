@@ -2,8 +2,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:5000",   // 👈 ONLY plain string
-  withCredentials: true,
+  baseURL: import.meta.env.VITE_API_URL, // https://coding-adventurer-game-2.onrender.com
+  withCredentials: false,                // ⬅️ turn off; we don’t use cookies
 });
 
 api.interceptors.request.use(cfg => {
@@ -11,6 +11,7 @@ api.interceptors.request.use(cfg => {
   if (token) cfg.headers.Authorization = `Bearer ${token}`;
   return cfg;
 });
+
 
 api.interceptors.response.use(
   (resp) => {

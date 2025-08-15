@@ -13,18 +13,37 @@ import { requireAuth } from "./middleware/auth.js";
 
 const app = express();
 
+const allowList = (process.env.CORS_ORIGIN || "")
+  .split(",")
+  .map(s => s.trim())
+  .filter(Boolean);
+
+// Preflight + actual request dono handle karo
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || "http://localhost:5173", // NOT "*"
-  credentials: true,
+  origin: (origin, cb) => {
+    // local tools / curl waali requests me origin null ho sakta hai
+    if (!origin) return cb(null, true);
+    if (!allowList.length || allowList.includes(origin)) return cb(null, true);
+    return cb(new Error("Not allowed by CORS"));
+  },
+  credentials: false, // tum cookies use nahi kar rahe ho
   methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  allowedHeaders: ["Content-Type","Authorization"],
 }));
+
+// Preflight for all routes (Express 5)
+// Preflight for all routes (Express 5)
+// Express 5 + path-to-regexp friendly
+app.options(/.*/, cors());
+
+
+ // preflight ke liye
 
 app.use(express.json());
 
 // Health
 app.get("/health", (_req, res) => res.json({ ok: true }));
-
+app.get("/", (_req, res) => res.json({ ok: true, service: "api" }));
 // Public
 app.use("/auth", authRoutes);
 app.use("/challenges", challengesRoute);
