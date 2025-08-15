@@ -3,6 +3,26 @@
 This is the **Coding Adventurer Game** project, deployed live at:
 🔗 [Live Demo](https://coding-adventurer-game-1.onrender.com)
 
+A fun and interactive coding challenge platform where users can sign up, solve problems, and track their progress in real-time.  
+The game is designed to help learners practice coding while having fun, with support for multiple challenge types and integrations with competitive programming platforms like **Codeforces**.
+
+---
+
+## 🚀 Features
+- **User Authentication** – Sign up, sign in, and manage accounts securely.
+- **Coding Challenges** – A variety of problems from easy to advanced.
+- **Progress Tracking** – Save your solutions and see improvement over time.
+- **Codeforces Integration** – Pulls real challenges from Codeforces.
+- **Responsive UI** – Works on desktop and mobile.
+
+---
+
+## 🛠 Tech Stack
+**Frontend:** React, Axios, Vite, TailwindCSS (or your CSS framework)  
+**Backend:** Node.js, Express, MongoDB  
+**Deployment:** Render (Frontend + Backend)  
+**Version Control:** Git + GitHub
+
 ## Screenshots
 
 ### Screenshot 1
