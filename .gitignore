@@ -12,6 +12,9 @@ frontend/dist
 frontend/.env
 frontend/.env.*
 
+# allow production env to be committed
+!frontend/.env.production
+
 # Backend
 backend/node_modules
 backend/.env
