@@ -1,7 +1,7 @@
 # Coding Adventurer Game
 
 This is the **Coding Adventurer Game** project, deployed live at:
-🔗 [Live Demo](https://coding-adventurer-game-1.onrender.com)
+🔗 [Live Demo](https://coding-adventurer-game-1-jgnl.onrender.com/)
 
 A fun and interactive coding challenge platform where users can sign up, solve problems, and track their progress in real-time.  
 The game is designed to help learners practice coding while having fun, with support for multiple challenge types and integrations with competitive programming platforms like **Codeforces**.
