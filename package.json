@@ -1,0 +1,21 @@
+{
+  "name": "coding-adventurer-game",
+  "version": "1.0.0",
+  "description": "This is the **Coding Adventurer Game** project, deployed live at:\r 🔗 [Live Demo](https://coding-adventurer-game-1.onrender.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aditi2354/coding-adventurer-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Aditi2354/coding-adventurer-game/issues"
+  },
+  "homepage": "https://github.com/Aditi2354/coding-adventurer-game#readme"
+}
